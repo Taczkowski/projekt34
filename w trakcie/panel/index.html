@@ -1,0 +1,42 @@
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="top-bar">
+            <button class="btn logout" id="logoutBtn">Wyloguj</button>
+            <button class="btn open">Otwarcie</button>
+            <span>Czas Dostawy: <input  class="time" type="text"></span>
+        </div>
+        <div class="dashboard">
+            <div class="column large" id="przyjete">
+                <div class="section-title">Przyjęte</div>
+                <div class="draggable" draggable="true">Zamówienie1</div>
+                <div class="draggable" draggable="true">Zamówienie2</div>
+                <div class="draggable" draggable="true">Zamówienie3</div>
+                <div class="draggable" draggable="true">Zamówienie4</div>
+                <div class="draggable" draggable="true">Zamówienie5</div>
+                <div class="draggable" draggable="true">Zamówienie6</div>
+                <div class="draggable" draggable="true">Zamówienie7</div>
+                <div class="draggable" draggable="true">Zamówienie8</div>
+                <div class="draggable" draggable="true">Zamówienie9</div>
+            </div>
+            <div class="column large" id="w-trakcie">
+                <div class="section-title">W trakcie</div>
+            </div>
+            <div class="column" id="u-dostawcy">
+                <div class="section-title">U Dostawcy</div>
+            </div>
+            <div class="column" id="zrealizowane">
+                <div class="section-title">Zrealizowane</div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

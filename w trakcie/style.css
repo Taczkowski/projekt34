@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #e8d5b7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.road {
+    position: absolute;
+    bottom: 33%; /* Droga nieco nad środkiem ekranu */
+    width: 60%; /* Skrócona szerokość drogi */
+    height: 40px;
+    background: #8b3a3a;
+    border-radius: 30px;
+    transform: translateY(-50%); /* Wyśrodkowanie drogi w osi Y */
+    left: 20%; /* Wyśrodkowanie drogi w osi X */
+}
+
+.oven {
+    z-index: 30;
+    position: absolute;
+    top: 50%; /* Piec na środku ekranu w osi Y */
+    left: 50%; /* Piec na środku ekranu w osi X */
+    width: 300px;
+    height: 300px;
+    background: #8b3a3a;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    transform: translate(-50%, -50%); /* Wyśrodkowanie pieca */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.chimney {
+    position: absolute;
+    top: -60px; /* Zwiększona wysokość komina */
+    width: 100px;
+    height: 80px; /* Zwiększona wysokość komina */
+    background: #8b3a3a;
+    border-radius: 10px;
+}
+
+.scooter {
+    position: absolute;
+    bottom: 400px;
+    left: 20%; /* Dostosowane do nowej szerokości drogi */
+    width: 100px;
+    transition: left 2s ease-in-out;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.control-btn {
+    position: absolute;
+    bottom: 20px;
+    padding: 10px 20px;
+    background: #8b4a3d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.control-btn:hover {
+    background: #73352b;
+}
+
+.house {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    bottom: 25%; /* Pozycja domów na wysokości drogi */
+    transform: translateY(-50%);
+}
+
+.right-house {
+    right: 10%; /* Dom po prawej stronie */
+}
+.website {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    bottom: 25%; /* Pozycja obrazu website.png na wysokości drogi */
+    left: 10%; /* Po lewej stronie drogi */
+    transform: translateY(-50%);
+}
