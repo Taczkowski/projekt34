@@ -1,50 +1,42 @@
 /* Stylowanie pasków przewijania dla WebKit (Chrome, Safari) */
 .column::-webkit-scrollbar {
-    width: 20px; /* Szerokość paska przewijania */
-    border-radius: 10px; /* Zaokrąglenie krawędzi tła */
+    display: none;
 }
 
 .column::-webkit-scrollbar-track {
-    width: 20px; /* Szerokość paska przewijania */
-    background: rgb(189, 141, 141); /* Kolor tła paska przewijania */
-    border-radius: 10px; /* Zaokrąglenie krawędzi tła */
+    display: none;
 }
 
 .column::-webkit-scrollbar-thumb {
-    width: 20px; /* Szerokość paska przewijania */
-    background: #612c2c; /* Kolor paska przewijania */
-    border-radius: 10px; /* Zaokrąglenie krawędzi paska */
-    border: 2px solid rgb(146, 77, 77); /* Obramowanie paska */
+    display: none;
 }
 
 .column::-webkit-scrollbar-thumb:hover {
-    width: 20px; /* Szerokość paska przewijania */
-    border-radius: 10px; /* Zaokrąglenie krawędzi tła */
-    background: #8aa678; /* Kolor paska przewijania po najechaniu myszką */
+    display: none;
 }
-
 
 body {
     background-color: #e8d5b7;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
+    height: 80vh;
 }
 
 .draggable {
     padding: 10px;
-    background-color: rgb(243, 235, 235);
+    background-color: rgb(245, 245, 233);
     border: solid rgb(146, 77, 77);
     border-radius: 15px;
     margin-bottom: 10px;
-    height: 10%;
+    height: auto;
     cursor: grab;
 }
-
 
 .draggable:active {
     cursor: grabbing;
 }
+
 .top-bar {
     justify-content: space-between;
     align-items: center;
@@ -62,7 +54,31 @@ body {
     font-size: 16px;
     font-weight: bold;
 }
+.status-buttons {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#deliveryToggleBtn{
+    background-color: #f0e09b;
+}
+#deliveryToggleBtn.wznow {
+    background-color: #bdc788;
+}
+#closeBtn{
+    background-color: #cf5a5a;
+}
+.top-bar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
 
+span {
+    margin-left: 0;
+}
 .logout {
     background: #612c2c;
     color: white;
@@ -82,36 +98,44 @@ body {
 }
 
 .column {
-    scrollbar-width: auto;
-    scrollbar-color: #612c2c rgb(189, 141, 141); /* Kolor paska i tła */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
     background-color: rgb(189, 141, 141);
     border-radius: 30px;
     border: solid rgb(146, 77, 77);
     padding: 20px;
     overflow-y: auto; /* Dodaj tę linię, aby włączyć pasek przewijania */
     flex-grow: 1;
-    height: 80%;
 }
 
 .column.large {
-    scrollbar-width: auto;
-    scrollbar-color: #612c2c rgb(189, 141, 141); /* Kolor paska i tła */
-    height: 80%;
-    flex: 1; /* Większa szerokość dla kolumn "Przyjęte" i "W trakcie" */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    flex: 1.5; /* Większa szerokość dla "W trakcie" */
     overflow-y: auto; /* Dodaj tę linię również dla kolumn .large */
+    width: 20vw;
 }
 
-#dostawca-zrealizowane {
+.column-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    height: 80%;
-    flex: 1; /* Mniejsza szerokość dla kolumny "U Dostawcy" i "Zrealizowane" */
+    flex: 1;
 }
-span{
+
+#nowe-zamowienia {
+    flex: 0.5; /* Mniejsza szerokość dla "Nowe zamówienia" */
+}
+
+#odrzucone {
+    flex: 1; /* Standardowa szerokość dla "Odrzucone" */
+}
+
+span {
     margin-left: 74%;
 }
-.time{
+
+.time {
     background-color: rgb(243, 235, 235);
     border-radius: 10px;
     border: solid rgb(146, 77, 77);
@@ -119,6 +143,7 @@ span{
     width: 50px;
     margin-right: 40px;
 }
+
 .section {
     padding: 10px;
     border-radius: 10px;
