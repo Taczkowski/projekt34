@@ -1,0 +1,156 @@
+/* Stylowanie pasków przewijania dla WebKit (Chrome, Safari) */
+.column::-webkit-scrollbar {
+    display: none;
+}
+
+.column::-webkit-scrollbar-track {
+    display: none;
+}
+
+.column::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+.column::-webkit-scrollbar-thumb:hover {
+    display: none;
+}
+
+body {
+    background-color: #e8d5b7;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    height: 80vh;
+}
+
+.draggable {
+    padding: 10px;
+    background-color: rgb(245, 245, 233);
+    border: solid rgb(146, 77, 77);
+    border-radius: 15px;
+    margin-bottom: 10px;
+    height: auto;
+    cursor: grab;
+}
+
+.draggable:active {
+    cursor: grabbing;
+}
+
+.top-bar {
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(189, 141, 141);
+    border-radius: 30px;
+    border: solid rgb(146, 77, 77);
+    padding: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+.status-buttons {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#deliveryToggleBtn{
+    background-color: #f0e09b;
+}
+#deliveryToggleBtn.wznow {
+    background-color: #bdc788;
+}
+#closeBtn{
+    background-color: #cf5a5a;
+}
+.top-bar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+span {
+    margin-left: 0;
+}
+.logout {
+    background: #612c2c;
+    color: white;
+}
+
+.open {
+    background: #8aa678;
+    color: black;
+}
+
+.dashboard {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    height: 100%;
+    width: 100%;
+}
+
+.column {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    background-color: rgb(189, 141, 141);
+    border-radius: 30px;
+    border: solid rgb(146, 77, 77);
+    padding: 20px;
+    overflow-y: auto; /* Dodaj tę linię, aby włączyć pasek przewijania */
+    flex-grow: 1;
+}
+
+.column.large {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    flex: 1.5; /* Większa szerokość dla "W trakcie" */
+    overflow-y: auto; /* Dodaj tę linię również dla kolumn .large */
+    width: 20vw;
+}
+
+.column-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+
+#nowe-zamowienia {
+    flex: 0.5; /* Mniejsza szerokość dla "Nowe zamówienia" */
+}
+
+#odrzucone {
+    flex: 1; /* Standardowa szerokość dla "Odrzucone" */
+}
+
+span {
+    margin-left: 74%;
+}
+
+.time {
+    background-color: rgb(243, 235, 235);
+    border-radius: 10px;
+    border: solid rgb(146, 77, 77);
+    height: 50px;
+    width: 50px;
+    margin-right: 40px;
+}
+
+.section {
+    padding: 10px;
+    border-radius: 10px;
+    flex-grow: 1;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}

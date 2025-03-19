@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #e8d5b7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.road {
+    position: absolute;
+    bottom: 33%; /* Droga nieco nad środkiem ekranu */
+    width: 60%; /* Skrócona szerokość drogi */
+    height: 4vh; /* Wysokość drogi proporcjonalna do wysokości ekranu */
+    background: #8b3a3a;
+    border-radius: 30px;
+    transform: translateY(-50%); /* Wyśrodkowanie drogi w osi Y */
+    left: 20%; /* Wyśrodkowanie drogi w osi X */
+}
+
+.scooter {
+    position: absolute;
+    bottom: 33%; /* Pozycja skutera proporcjonalna do wysokości ekranu */
+    left: 15%; /* Dostosowane do nowej szerokości drogi */
+    width: 10vw; /* Szerokość skutera proporcjonalna do szerokości ekranu */
+    max-width: 100px; /* Maksymalna szerokość skutera */
+    transition: left 2s ease-in-out;
+}
+
+/* Responsywność dla mniejszych ekranów */
+@media (max-width: 768px) {
+    .scooter {
+        bottom: 45%; /* Dostosowanie pozycji na mniejszych ekranach */
+    }
+}
+
+/* Responsywność dla bardzo małych ekranów */
+@media (max-width: 480px) {
+    .scooter {
+        bottom: 46%; /* Dostosowanie pozycji na bardzo małych ekranach */
+        
+    }
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.control-btn {
+    position: absolute;
+    bottom: 5vh; /* Pozycja przycisku proporcjonalna do wysokości ekranu */
+    padding: 1vh 2vw; /* Wewnętrzny padding proporcjonalny do rozmiaru ekranu */
+    background: #8b4a3d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 2vh; /* Rozmiar czcionki proporcjonalny do wysokości ekranu */
+}
+
+.control-btn:hover {
+    background: #73352b;
+}
+
+.house {
+    width: 15vw; /* Szerokość domu proporcjonalna do szerokości ekranu */
+    height: 15vw; /* Wysokość domu proporcjonalna do szerokości ekranu */
+    position: absolute;
+    bottom: 25%; /* Pozycja domów na wysokości drogi */
+    transform: translateY(-50%);
+}
+
+.right-house {
+    right: 10%; /* Dom po prawej stronie */
+}
+
+.website {
+    width: 15vw; /* Szerokość obrazu proporcjonalna do szerokości ekranu */
+    height: 15vw; /* Wysokość obrazu proporcjonalna do szerokości ekranu */
+    position: absolute;
+    bottom: 25%; /* Pozycja obrazu website.png na wysokości drogi */
+    left: 10%; /* Po lewej stronie drogi */
+    transform: translateY(-50%);
+}
+
+.photo {
+    width: 100%;
+}

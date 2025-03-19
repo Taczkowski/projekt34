@@ -1,0 +1,127 @@
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="top-bar">
+            <button class="btn logout" id="logoutBtn">Wyloguj</button>
+            <div class="status-buttons">
+                <button class="btn open" id="openBtn">Otwarcie</button>
+                <button class="btn close" id="closeBtn" style="display: none;">Zamknięcie</button>
+                <button class="btn delivery-toggle" id="deliveryToggleBtn" style="display: none;">Wstrzymanie dostaw</button>
+            </div>
+            <span>Czas Dostawy: <input class="time" type="text" readonly></span>
+        </div>
+        <div class="dashboard">
+            <!-- Nowe zamówienia -->
+            <div class="column" id="nowe-zamowienia">
+                <div class="draggable" draggable="true">
+                    <div><strong>Adres:</strong> ul. Kwiatowa 15, 00-001 Warszawa</div>
+                    <div><strong>Imię i nazwisko:</strong> Jan Kowalski</div>
+                    <div><strong>Numer zamówienia:</strong> #12345</div>
+                    <div><strong>Uwagi:</strong> Proszę o dostawę do drzwi.</div>
+                    <div><strong>Zamówione pizze:</strong> 6 szt.</div>
+                    <ul>
+                        <li>Margherita x 2</li>
+                        <li>Pepperoni x 1</li>
+                        <li>Capricciosa x 1</li>
+                        <li>Hawajska x 2</li>
+                    </ul>
+                </div>
+            
+                <!-- Nowe zamówienia -->
+                <div class="draggable" draggable="true">
+                    <div><strong>Adres:</strong> ul. Różana 8, 00-002 Warszawa</div>
+                    <div><strong>Imię i nazwisko:</strong> Katarzyna Nowak</div>
+                    <div><strong>Numer zamówienia:</strong> #12350</div>
+                    <div><strong>Uwagi:</strong> Wegetariańskie składniki</div>
+                    <div><strong>Zamówione pizze:</strong> 4 szt.</div>
+                    <ul>
+                        <li>Wegetariańska x 3</li>
+                        <li>Margherita x 1</li>
+                    </ul>
+                </div>
+            
+                <div class="draggable" draggable="true">
+                    <div><strong>Adres:</strong> ul. Leśna 5, 30-003 Kraków</div>
+                    <div><strong>Imię i nazwisko:</strong> Marek Kowalczyk</div>
+                    <div><strong>Numer zamówienia:</strong> #12351</div>
+                    <div><strong>Uwagi:</strong> Bez glutenu</div>
+                    <div><strong>Zamówione pizze:</strong> 7 szt.</div>
+                    <ul>
+                        <li>Pepperoni x 2</li>
+                        <li>Capricciosa x 3</li>
+                        <li>Hawajska x 2</li>
+                    </ul>
+                </div>
+            
+                <div class="draggable" draggable="true">
+                    <div><strong>Adres:</strong> ul. Polna 12, 50-004 Wrocław</div>
+                    <div><strong>Imię i nazwisko:</strong> Agnieszka Wiśniewska</div>
+                    <div><strong>Numer zamówienia:</strong> #12352</div>
+                    <div><strong>Uwagi:</strong> Ostre sosy</div>
+                    <div><strong>Zamówione pizze:</strong> 5 szt.</div>
+                    <ul>
+                        <li>Diavola x 3</li>
+                        <li>Pepperoni x 2</li>
+                    </ul>
+                </div>
+            
+                <div class="draggable" draggable="true">
+                    <div><strong>Adres:</strong> ul. Morska 22, 80-005 Gdańsk</div>
+                    <div><strong>Imię i nazwisko:</strong> Paweł Dąbrowski</div>
+                    <div><strong>Numer zamówienia:</strong> #12353</div>
+                    <div><strong>Uwagi:</strong> Dostawa na piętro</div>
+                    <div><strong>Zamówione pizze:</strong> 8 szt.</div>
+                    <ul>
+                        <li>Margherita x 4</li>
+                        <li>Capricciosa x 2</li>
+                        <li>Wegetariańska x 2</li>
+                    </ul>
+                </div>
+            
+                <div class="draggable" draggable="true">
+                    <div><strong>Adres:</strong> ul. Górna 7, 90-006 Łódź</div>
+                    <div><strong>Imię i nazwisko:</strong> Zofia Jankowska</div>
+                    <div><strong>Numer zamówienia:</strong> #12354</div>
+                    <div><strong>Uwagi:</strong> Bez sera</div>
+                    <div><strong>Zamówione pizze:</strong> 3 szt.</div>
+                    <ul>
+                        <li>Margherita x 1</li>
+                        <li>Pepperoni x 2</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Przyjęte i Odrzucone -->
+            <div class="column-container">
+                <div class="column large" id="przyjete">
+                    <div class="section-title">Przyjęte</div>
+                </div>
+                <div class="column" id="odrzucone">
+                    <div class="section-title">Odrzucone</div>
+                </div>
+            </div>
+
+            <!-- W trakcie -->
+            <div class="column large" id="w-trakcie">
+                <div class="section-title">W trakcie</div>
+            </div>
+
+            <!-- U Dostawcy i Zrealizowane -->
+            <div class="column-container">
+                <div class="column" id="u-dostawcy">
+                    <div class="section-title">U Dostawcy</div>
+                </div>
+                <div class="column" id="zrealizowane">
+                    <div class="section-title">Zrealizowane</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
