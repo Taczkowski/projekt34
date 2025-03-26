@@ -1,0 +1,21 @@
+/* Resetowanie marginesów i paddingów */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Ukrywa paski przewijania */
+    width: 100%;
+    height: 100%;
+    background-color: #e7dbc5;
+}
+
+/* Styl dla elementu canvas */
+canvas {
+    display: block; /* Usuwa domyślne marginesy */
+    width: 100vw; /* Szerokość 100% widoku */
+    height: 99vh; /* Wysokość 100% widoku */
+}
+
+/* Umożliwia lepsze zarządzanie wymiarami */
+* {
+    box-sizing: border-box; /* Umożliwia lepsze zarządzanie wymiarami */
+}
