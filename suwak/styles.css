@@ -1,0 +1,313 @@
+@font-face {
+    font-family: 'Noot';
+    src: url('Noot.ttf') format('opentype');
+}
+
+body {
+    font-family: Arial, sans-serif;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    position: relative;
+    z-index: 30;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    font-family: Noot;
+    font-size: 60px;
+    transition: color 0.5s ease-in-out;
+}
+
+.header {
+    position: relative;
+    font-size: 2.5rem;
+    z-index: 30;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.navbar {
+    z-index: 30;
+    position: relative;
+    border: 3px solid #924d4d;
+    font-family: 'Noot';
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    width: 80%;
+    margin: auto;
+    border-radius: 25px;
+    flex-wrap: wrap;
+    transition: background-color 0.5s ease-in-out, border-color 0.5s ease-in-out;
+}
+
+.pizza-img {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100px;
+    z-index: 100;
+    transition: filter 0.5s ease-in-out;
+}
+
+.nav-item {
+    margin-top: auto;
+    font-size: larger;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+}
+
+.nav-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.nav-item:active {
+    transform: scale(0.95);
+    filter: brightness(0.9);
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+}
+
+.nav-item:active::after {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+}
+main {
+    flex-direction: column;
+    display: table-row;
+    z-index: 30;
+    position: relative;
+    border: 3px solid #924d4d;
+    font-family: 'Noot';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 25px;
+    transition: background-color 0.5s ease-in-out, border-color 0.5s ease-in-out;
+}
+main > div >h2 {
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+    display: block;
+    color: white;
+}
+main > div > img {
+    border-radius: 7vh;
+    display: block;
+}
+/* Styl przełącznika motywów */
+.theme-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+.switcher-container {
+    padding: 10px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 30px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    transition: background-color 0.5s ease-in-out;
+}
+
+.theme-switcher-toggle {
+    width: 40px;
+    height: 110px;
+    background-color: #bbb;
+    border-radius: 20px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s;
+    padding-top: 10px;
+}
+
+.slider {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.slider img {
+    width: 54px;
+    height: 54px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.slider:active {
+    transform: translateX(-50%) scale(0.9);
+}
+
+.slider-jump {
+    animation: jump 0.6s ease;
+}
+
+@keyframes jump {
+    0%, 100% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.2); }
+}
+
+/* Style dla różnych motywów */
+body[data-theme="day"] {
+    background-color: rgb(231, 217, 188);
+    color: #f17070;
+}
+
+body[data-theme="day"] #header {
+    color: #d45a5a;
+}
+
+body[data-theme="day"] .navbar,
+body[data-theme="day"] main {
+    background-color: #bd8d8d;
+    border-color: #c47e7e;
+}
+
+body[data-theme="day"] .nav-item {
+    background-color: #f17070;
+    color: white;
+}
+
+body[data-theme="day"] .pizza-img {
+    filter: none;
+}
+
+body[data-theme="midnight"] {
+    background-color: #3b2f2a;
+    color: #f17070;
+}
+
+body[data-theme="midnight"] #header {
+    color: #e7a5a5;
+}
+
+body[data-theme="midnight"] .navbar,
+body[data-theme="midnight"] main {
+    background-color: #9c6868;
+    border-color: #4a2e2e;
+}
+
+body[data-theme="midnight"] .nav-item {
+    background-color: #8a4b4b;
+    color: #e7dbc5;
+}
+
+body[data-theme="midnight"] .pizza-img {
+    filter: sepia(0.5) brightness(0.8);
+}
+
+body[data-theme="midnight"] .switcher-container {
+    background: rgba(0,0,0,0.3);
+}
+
+body[data-theme="night"] {
+    background-color: #2f1e1e;
+    color: #e7dbc5;
+}
+
+body[data-theme="night"] #header {
+    color: #e7dbc5;
+}
+
+body[data-theme="night"] .navbar,
+body[data-theme="night"] main {
+    background-color: #a05a4d;
+    border-color: #3a1e1e;
+}
+
+body[data-theme="night"] .nav-item {
+    background-color: #c97c5d;
+    color: #e7dbc5;
+}
+
+body[data-theme="night"] .pizza-img {
+    filter: sepia(0.8) brightness(0.6);
+}
+
+body[data-theme="night"] .switcher-container {
+    background: rgba(0,0,0,0.5);
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    .navbar {
+        align-items: center;
+        padding-top: 60px;
+    }
+    
+    .nav-item {
+        width: 100%;
+    }
+    
+    .pizza-img {
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .theme-switcher {
+        top: 10px;
+        right: 10px;
+    }
+    
+    #header {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar, main {
+        width: 95%;
+    }
+    
+    #header {
+        font-size: 30px;
+    }
+}
